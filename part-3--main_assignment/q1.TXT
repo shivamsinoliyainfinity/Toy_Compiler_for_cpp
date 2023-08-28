@@ -1,0 +1,9 @@
+S : ID '=' E { printf("The rule with equal to operator is triggered\n"); }
+E : E '+' T { printf("The rule with plus operator is triggered\n"); }
+E : E '-' T { printf("The rule with minus operator is triggered\n"); }
+E : T 
+T : T '*' F { printf("The rule * operator is triggered\n"); }
+T : T '/' F { printf("The rule / operator is triggered\n"); }
+T : F 
+F : INT_CONST { printf("The rule with INT_CONST is triggered\n");}
+F : ID { printf("The rule with ID is triggered\n"); }
